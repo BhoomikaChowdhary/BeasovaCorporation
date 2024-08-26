@@ -36,7 +36,9 @@ To run this project locally, follow these steps:
    - Create your own posts by using the provided post creation modal or by manually updating the posts section in the HTML file.
 
 ## Project Structure
-social-media-app
+
+```plaintext
+root
 │
 ├── README.md         # Documentation file for the project
 ├── index.html        # The main HTML file that defines the structure of the app
@@ -46,4 +48,4 @@ social-media-app
 ├── fake1.jpg         # Fake profile picture for the suggestions bar
 ├── fake2.jpg         # Fake profile picture for the suggestions bar
 └── fake3.jpg         # Fake profile picture for the suggestions bar
-
+```
