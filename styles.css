@@ -3,8 +3,9 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f6f9;
-    color: #333;
+    background-color: #f4f6f9; /* Light mode background */
+    color: #333; /* Light mode text color */
+    transition: background-color 0.3s, color 0.3s;
 }
 
 a {
@@ -12,9 +13,8 @@ a {
     color: inherit;
 }
 
-/* Menu Bar Styles */
 .menu-bar {
-    background-color: #007bff;
+    background-color: #007bff; /* Light mode background */
     color: white;
     padding: 15px;
     display: flex;
@@ -42,6 +42,19 @@ a {
 }
 
 .menu-bar .menu-items a:hover {
+    color: #e0e0e0;
+}
+
+.menu-bar .menu-items .theme-toggle button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.menu-bar .menu-items .theme-toggle button:hover {
     color: #e0e0e0;
 }
 
@@ -185,9 +198,6 @@ a {
     object-fit: cover; /* Maintain aspect ratio without distortion */
 }
 
-
-
-
 .post-profile-info h4 {
     margin: 0;
     font-size: 18px;
@@ -303,9 +313,9 @@ a {
 }
 
 .suggestion-picture {
-    width: 50px; /* Set a fixed width for consistent sizing */
-    height: 50px; /* Set a fixed height */
-    border-radius: 50%; /* Make it a perfect circle */
+    width: 50px; /* Same fixed size for consistency */
+    height: 50px; /* Same fixed size for consistency */
+    border-radius: 50%;
     background-color: #FFFFFF; /* Ensure there's a background color */
     margin-right: 10px; /* Keep the margin between the picture and the text */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
@@ -315,9 +325,8 @@ a {
 .suggestion-picture img {
     width: 100%; /* Make sure the image takes up the full width of the container */
     height: 100%; /* Make sure the image takes up the full height of the container */
-    object-fit: cover; /* Cover the container without distortion */
+    object-fit: cover; /* Maintain aspect ratio without distortion */
 }
-
 
 .suggestion-info h4 {
     margin: 0;
@@ -333,13 +342,11 @@ a {
 
 .suggestions-bar a {
     color: #007bff;
-    font-size: 14px;
     text-decoration: none;
-    transition: color 0.3s;
 }
 
 .suggestions-bar a:hover {
-    color: #0056b3;
+    text-decoration: underline;
 }
 
 /* Modal Styles */
@@ -352,8 +359,7 @@ a {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
     padding-top: 60px;
 }
 
@@ -365,35 +371,37 @@ a {
     width: 80%;
     max-width: 600px;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.close-btn {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+/* Dark Mode for Modal */
+.modal.dark-mode .modal-content {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border: 1px solid #333;
 }
 
-.close-btn:hover,
-.close-btn:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.modal-content h2 {
-    margin-top: 0;
-}
-
+/* Textarea Styles */
 .modal-content textarea {
-    width: 100%;
-    height: 100px;
+    width: calc(100% - 20px); /* Full width minus padding */
+    height: 150px; /* Adjust height as needed */
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #ddd;
-    margin-bottom: 15px;
+    border: 1px solid #ddd; /* Light border for light mode */
+    background-color: #f4f6f9; /* Light background for light mode */
+    resize: vertical; /* Allow vertical resizing only */
+    margin-bottom: 15px; /* Space below the textarea */
+    box-sizing: border-box; /* Ensure padding and border are included in the width and height */
 }
 
+/* Dark Mode Textarea */
+.modal.dark-mode .modal-content textarea {
+    border: 1px solid #333; /* Dark border for dark mode */
+    background-color: #1e1e1e; /* Dark background for dark mode */
+    color: #e0e0e0; /* Light text color for dark mode */
+}
+
+/* Button Styles in Modal */
 .modal-content button {
     background-color: #007bff;
     color: white;
@@ -407,4 +415,81 @@ a {
 
 .modal-content button:hover {
     background-color: #0056b3;
+}
+
+/* Dark Mode Button */
+.modal.dark-mode .modal-content button {
+    background-color: #0056b3;
+}
+
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #181818; /* Dark mode background */
+    color: #e0e0e0; /* Dark mode text color */
+}
+
+body.dark-mode .menu-bar {
+    background-color: #1f1f1f; /* Dark mode menu bar background */
+}
+
+body.dark-mode .menu-bar .menu-items a {
+    color: #e0e0e0;
+}
+
+body.dark-mode .menu-bar .menu-items .post-btn {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+body.dark-mode .menu-bar .menu-items .post-btn:hover {
+    background-color: #555;
+}
+
+body.dark-mode .profile-section,
+body.dark-mode .post-section,
+body.dark-mode .suggestions-bar {
+    background-color: #252525; /* Dark mode section background */
+    border-color: #333; /* Dark mode border color */
+}
+
+body.dark-mode .profile-info,
+body.dark-mode .post,
+body.dark-mode .suggestions-bar li {
+    background-color: #333; /* Dark mode background for profiles and posts */
+}
+
+body.dark-mode .post-content,
+body.dark-mode .profile-details h2,
+body.dark-mode .post-profile-info h4,
+body.dark-mode .suggestion-info h4 {
+    color: #e0e0e0;
+}
+
+body.dark-mode .post-content a,
+body.dark-mode .suggestions-bar a {
+    color: #1e90ff;
+}
+
+body.dark-mode .post-content a:hover,
+body.dark-mode .suggestions-bar a:hover {
+    color: #63a4ff;
+}
+
+body.dark-mode .modal-content {
+    background-color: #1e1e1e; /* Dark mode modal background */
+    color: #e0e0e0; /* Dark mode text color */
+}
+
+body.dark-mode .modal-footer button {
+    background-color: #333;
+}
+
+body.dark-mode .modal-footer button:hover {
+    background-color: #555;
+}
+
+/* Dark Mode Logo Styles */
+body.dark-mode .menu-bar .logo h1 {
+    color: #e0e0e0; /* Dark mode logo text color */
 }
