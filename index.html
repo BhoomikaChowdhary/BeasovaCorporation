@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class="menu-bar">
+        <div class="logo">
+            <h1>MySocial</h1>
+        </div>
+        <div class="menu-items">
+            <a href="#">Home</a>
+            <a href="#">Messages <span class="badge">3</span></a>
+            <a href="#">Notifications <span class="badge">5</span></a>
+            <button class="post-btn">Create Post</button>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="profile-section">
+            <div class="profile-info">
+                <div class="profile-picture"><img src="profile.jpg" alt="Profile Picture"></div>
+                <div class="profile-details">
+                    <h2>Bhoomika Chowdhary</h2>
+                    <p>Software Engineer | AI Enthusiast | Music Lover</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="post-section">
+            <div class="post">
+                <div class="post-header">
+                    <div class="post-profile">
+                        <div class="post-profile-picture"><img src="profile.jpg" alt="Post Profile Picture"></div>
+                        <div class="post-profile-info">
+                            <h4>Bhoomika Chowdhary</h4>
+                            <p>@bhoomika</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <p>🚀 Excited to share that I am currently interning at Beasova Corporation as a Web Development Intern! 🎉 During this internship, I am working on innovative web projects, enhancing my coding skills, and contributing to real-world solutions. 🌟</p>
+                    <p>🔗 Check out Beasova Corporation here: <a href="https://www.linkedin.com/company/beasova/" target="_blank">Beasova</a></p>
+                </div>
+                <div class="post-engagement">
+                    <button class="like-btn"><i class="fas fa-thumbs-up"></i> Like</button>
+                    <button><i class="fas fa-comment"></i> Comment</button>
+                    <button><i class="fas fa-share"></i> Share</button>
+                </div>
+                <div class="post-stats">
+                    <p><strong>Likes:</strong> 150</p>
+                    <p><strong>Comments:</strong> 20</p>
+                    <p><strong>Shares:</strong> 10</p>
+                </div>
+                <div class="comments-section">
+                    <textarea class="comment-box" placeholder="Add a comment..."></textarea>
+                    <button class="comment-submit">Submit</button>
+                    <div class="comments-list">
+                        <p><strong>Riya Kapoor:</strong> Congrats on the internship!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="suggestions-bar">
+            <h3>Suggestions</h3>
+            <ul>
+                <li>
+                    <div class="suggestion-profile">
+                        <!-- Fake profile picture 1 -->
+                        <div class="suggestion-picture">
+                            <img src="fake1.jpg" alt="Aisha Khan">
+                        </div>
+                        <div class="suggestion-info">
+                            <h4>Aisha Khan</h4>
+                            <p>Graphic Designer</p>
+                        </div>
+                    </div>
+                    <a href="#">Follow</a>
+                </li>
+                <li>
+                    <div class="suggestion-profile">
+                        <!-- Fake profile picture 2 -->
+                        <div class="suggestion-picture">
+                            <img src="fake2.jpg" alt="Rajesh Patel">
+                        </div>
+                        <div class="suggestion-info">
+                            <h4>Rajesh Patel</h4>
+                            <p>Web Developer</p>
+                        </div>
+                    </div>
+                    <a href="#">Follow</a>
+                </li>
+                <li>
+                    <div class="suggestion-profile">
+                        <!-- Fake profile picture 3 -->
+                        <div class="suggestion-picture">
+                            <img src="fake3.jpg" alt="Neha Sharma">
+                        </div>
+                        <div class="suggestion-info">
+                            <h4>Neha Sharma</h4>
+                            <p>Content Creator</p>
+                        </div>
+                    </div>
+                    <a href="#">Follow</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Post Creation Modal -->
+    <div id="create-post-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Create a Post</h2>
+            <textarea id="post-content" placeholder="What's on your mind?"></textarea>
+            <button id="post-submit">Post</button>
+        </div>
+    </div>
+</body>
+</html>
